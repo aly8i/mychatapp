@@ -5,24 +5,7 @@ import axios from "axios";
 
 export default function Auth() {
   const { username, setUsername, secret, setSecret } = useContext(Context);
-  const accounts = [
-    {
-      username:"admin",
-      secret:"adminasdfghjkl"
-    },
-    {
-      username:"shadi",
-      secret:"333"
-    },
-    {
-      username:"prmarycat",
-      secret:"999"
-    },
-    {
-      username:"bigbill",
-      secret:"1234"
-    }
-  ];
+  const accounts = JSON.parse(process.env.NEXT_PUBLIC_USERNAMES);
 
   const router = useRouter();
 
@@ -44,7 +27,7 @@ export default function Auth() {
           secret,
         },
         {
-          headers: { "Private-key": "81a73e5e-d4e4-477f-ab2d-786d1afbee85" },
+          headers: { "Private-key": `${process.env.NEXT_PUBLIC_SECRET}` },
         }
       )
       .then((r) => router.push("/chats"));
