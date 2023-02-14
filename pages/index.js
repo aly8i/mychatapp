@@ -37,7 +37,7 @@ export default function Auth() {
     <div className="background">
       <div className="auth-container">
         <form className="auth-form" onSubmit={(e) => onSubmit(e)}>
-          <div className="auth-title">IT Buddies Chat</div>
+          <div className="auth-title">cHaT wItH aLi</div>
           <div className="input-container">
             <input
               type="text"
